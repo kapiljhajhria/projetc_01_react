@@ -8,7 +8,7 @@ class MoviesGrid extends React.Component {
     getMoviesRow(){
         let moviesDiv=[];
         moviesInfoList.forEach((movie)=>moviesDiv.push(
-            <MoviePoster imglink={movie.posterurl} genre={movie.genres[0]} contentRating={movie.contentRating} movieName={movie.title}     > </MoviePoster>
+            <MoviePoster imglink={movie.posterurl} genre={movie.genres.join(',')} contentRating={movie.contentRating} movieName={movie.title}     > </MoviePoster>
         ));
         return moviesDiv;
     }

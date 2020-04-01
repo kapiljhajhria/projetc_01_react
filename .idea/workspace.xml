@@ -4,7 +4,7 @@
     <list default="true" id="2aa69c4b-e382-447f-a0a7-379ffe071ec2" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/MovieGrid/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/MovieGrid/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/MoviePoster/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/MoviePoster/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/MovieGrid/styles.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/MovieGrid/styles.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/MoviePoster/styles.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/MoviePoster/styles.css" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -75,7 +75,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1585718414361</updated>
-      <workItem from="1585718416203" duration="14568000" />
+      <workItem from="1585718416203" duration="16005000" />
     </task>
     <task id="LOCAL-00001" summary="init">
       <created>1585718785316</created>
@@ -112,7 +112,14 @@
       <option name="project" value="LOCAL" />
       <updated>1585734918489</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="UI also almost done">
+      <created>1585736039625</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1585736039625</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -135,7 +142,8 @@
     <MESSAGE value="rough grid UI completed" />
     <MESSAGE value="grid which returns 2 rows with offset completed" />
     <MESSAGE value="fit and finish remaining" />
-    <option name="LAST_COMMIT_MESSAGE" value="fit and finish remaining" />
+    <MESSAGE value="UI also almost done" />
+    <option name="LAST_COMMIT_MESSAGE" value="UI also almost done" />
   </component>
   <component name="WindowStateProjectService">
     <state x="560" y="179" key="#ESLint" timestamp="1585732182217">
@@ -146,10 +154,10 @@
       <screen x="0" y="0" width="1920" height="1035" />
     </state>
     <state x="424" y="176" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1920.1035@0.0.1920.1035" timestamp="1585727710092" />
-    <state x="601" y="178" key="CommitChangelistDialog2" timestamp="1585734918439">
+    <state x="601" y="178" key="CommitChangelistDialog2" timestamp="1585736039580">
       <screen x="0" y="0" width="1920" height="1035" />
     </state>
-    <state x="601" y="178" key="CommitChangelistDialog2/0.0.1920.1035@0.0.1920.1035" timestamp="1585734918439" />
+    <state x="601" y="178" key="CommitChangelistDialog2/0.0.1920.1035@0.0.1920.1035" timestamp="1585736039580" />
     <state x="0" y="92" key="DiffContextDialog" timestamp="1585723687278">
       <screen x="0" y="0" width="1920" height="1035" />
     </state>

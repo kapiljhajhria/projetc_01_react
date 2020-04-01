@@ -1,22 +1,24 @@
 
 .movieCard{
     position: relative;
+    margin: 4px;
 }
 .movie-poster{
     position: relative;
-    display: flex;
+    /*display: flex;*/
     /*flex-wrap: wrap;*/
-    width:25vh;
-    height: 35vh;
+    width:250px;
+    height: 350px;
     /*border: 2px solid black;*/
-    margin: 8px;
+    /*margin: 8px;*/
 }
 .movieimg{
-    width:25vh;
-    height: 35vh;
+    width:250px;
+    height: 350px;
 }
 .movie-poster:hover + .mv-inf{
     visibility: visible;
+    /*transform: rotate(02deg);*/
 }
 
 .mv-inf:hover{
@@ -29,14 +31,17 @@
     position: absolute;
     alignment: bottom;
     bottom: 0;
+    padding-bottom: 5px;
+    padding-top: 5px;
     /*top: -6px;*/
     /*z-index: 3;*/
     align-self: end;
     width: 100%;
     background-color: white;
-    height: 8vh;
+    /*height: 8vh;*/
     /*margin: 8px;*/
     visibility: hidden;
+    /*transition: visibility 500ms;*/
 }
 
 /*.mv-inf-title, .mv-inf-ratings,.mv-inf-genre{*/
