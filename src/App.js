@@ -1,13 +1,14 @@
 import React from 'react';
-import logo from './logo.svg';
 import './App.css';
-import Square from './Square'
-import Grid from './Grid'
+import MoviesGrid from "./MovieGrid";
+import './moviedatabase'
 
 function App() {
+  console.log('hey');
+
   return (
     <div className="App">
-    <Grid></Grid>
+   <MoviesGrid></MoviesGrid>
 
     </div>
   );

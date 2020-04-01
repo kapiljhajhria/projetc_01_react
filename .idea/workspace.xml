@@ -1,10 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="2aa69c4b-e382-447f-a0a7-379ffe071ec2" name="Default Changelist" comment="">
+    <list default="true" id="2aa69c4b-e382-447f-a0a7-379ffe071ec2" name="Default Changelist" comment="grid which returns 2 rows with offset completed">
+      <change afterPath="$PROJECT_DIR$/src/MovieDetails/index.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/MovieDetails/styles.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/MovieGrid/index.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/MovieGrid/styles.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/MoviePoster/index.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/MoviePoster/styles.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/moviedatabase.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Grid/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Grid/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Square/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Square/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -15,13 +22,14 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="HTML File" />
-        <option value="JavaScript File" />
         <option value="CSS File" />
+        <option value="JavaScript File" />
       </list>
     </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="RESET_MODE" value="HARD" />
   </component>
   <component name="ProjectId" id="1ZvT9DZkgztvh6MCj241aQYPTd8" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
@@ -39,8 +47,11 @@
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="list.type.of.created.stylesheet" value="CSS" />
     <property name="node.js.detected.package.eslint" value="true" />
+    <property name="node.js.detected.package.standard" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
+    <property name="node.js.path.for.package.standard" value="project" />
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
+    <property name="node.js.selected.package.standard" value="" />
     <property name="nodejs_interpreter_path" value="node" />
     <property name="nodejs_package_manager_path" value="yarn" />
     <property name="restartRequiresConfirmation" value="false" />
@@ -70,7 +81,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1585718414361</updated>
-      <workItem from="1585718416203" duration="3416000" />
+      <workItem from="1585718416203" duration="13506000" />
     </task>
     <task id="LOCAL-00001" summary="init">
       <created>1585718785316</created>
@@ -93,39 +104,78 @@
       <option name="project" value="LOCAL" />
       <updated>1585720926818</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="grid which returns 2 rows with offset completed">
+      <created>1585721858492</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1585721858492</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
   </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="init" />
     <MESSAGE value="sqaure btn component added" />
     <MESSAGE value="rough grid UI completed" />
-    <option name="LAST_COMMIT_MESSAGE" value="rough grid UI completed" />
+    <MESSAGE value="grid which returns 2 rows with offset completed" />
+    <option name="LAST_COMMIT_MESSAGE" value="grid which returns 2 rows with offset completed" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="1041" y="94" key="CommitChangelistDialog2" timestamp="1585720926753">
+    <state x="560" y="179" key="#ESLint" timestamp="1585732182217">
       <screen x="0" y="0" width="1920" height="1035" />
     </state>
-    <state x="1041" y="94" key="CommitChangelistDialog2/0.0.1920.1035@0.0.1920.1035" timestamp="1585720926753" />
-    <state width="1058" height="272" key="GridCell.Tab.0.bottom" timestamp="1585721718579">
+    <state x="560" y="179" key="#ESLint/0.0.1920.1035@0.0.1920.1035" timestamp="1585732182217" />
+    <state x="424" y="176" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1585727710092">
       <screen x="0" y="0" width="1920" height="1035" />
     </state>
-    <state width="1058" height="272" key="GridCell.Tab.0.bottom/0.0.1920.1035@0.0.1920.1035" timestamp="1585721718579" />
-    <state width="1058" height="272" key="GridCell.Tab.0.center" timestamp="1585721718578">
+    <state x="424" y="176" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1920.1035@0.0.1920.1035" timestamp="1585727710092" />
+    <state x="601" y="178" key="CommitChangelistDialog2" timestamp="1585723695343">
       <screen x="0" y="0" width="1920" height="1035" />
     </state>
-    <state width="1058" height="272" key="GridCell.Tab.0.center/0.0.1920.1035@0.0.1920.1035" timestamp="1585721718578" />
-    <state width="1058" height="272" key="GridCell.Tab.0.left" timestamp="1585721718578">
+    <state x="601" y="178" key="CommitChangelistDialog2/0.0.1920.1035@0.0.1920.1035" timestamp="1585723695343" />
+    <state x="0" y="92" key="DiffContextDialog" timestamp="1585723687278">
       <screen x="0" y="0" width="1920" height="1035" />
     </state>
-    <state width="1058" height="272" key="GridCell.Tab.0.left/0.0.1920.1035@0.0.1920.1035" timestamp="1585721718578" />
-    <state width="1058" height="272" key="GridCell.Tab.0.right" timestamp="1585721718579">
+    <state x="0" y="92" key="DiffContextDialog/0.0.1920.1035@0.0.1920.1035" timestamp="1585723687278" />
+    <state x="1106" y="414" key="Github.ShareDialog" timestamp="1585722693497">
       <screen x="0" y="0" width="1920" height="1035" />
     </state>
-    <state width="1058" height="272" key="GridCell.Tab.0.right/0.0.1920.1035@0.0.1920.1035" timestamp="1585721718579" />
+    <state x="1106" y="414" key="Github.ShareDialog/0.0.1920.1035@0.0.1920.1035" timestamp="1585722693497" />
+    <state width="1874" height="272" key="GridCell.Tab.0.bottom" timestamp="1585732713405">
+      <screen x="0" y="0" width="1920" height="1035" />
+    </state>
+    <state width="1874" height="272" key="GridCell.Tab.0.bottom/0.0.1920.1035@0.0.1920.1035" timestamp="1585732713405" />
+    <state width="1874" height="272" key="GridCell.Tab.0.center" timestamp="1585732713405">
+      <screen x="0" y="0" width="1920" height="1035" />
+    </state>
+    <state width="1874" height="272" key="GridCell.Tab.0.center/0.0.1920.1035@0.0.1920.1035" timestamp="1585732713405" />
+    <state width="1874" height="272" key="GridCell.Tab.0.left" timestamp="1585732713404">
+      <screen x="0" y="0" width="1920" height="1035" />
+    </state>
+    <state width="1874" height="272" key="GridCell.Tab.0.left/0.0.1920.1035@0.0.1920.1035" timestamp="1585732713404" />
+    <state width="1874" height="272" key="GridCell.Tab.0.right" timestamp="1585732713405">
+      <screen x="0" y="0" width="1920" height="1035" />
+    </state>
+    <state width="1874" height="272" key="GridCell.Tab.0.right/0.0.1920.1035@0.0.1920.1035" timestamp="1585732713405" />
+    <state x="469" y="213" key="RollbackChangesDialog" timestamp="1585723694290">
+      <screen x="0" y="0" width="1920" height="1035" />
+    </state>
+    <state x="469" y="213" key="RollbackChangesDialog/0.0.1920.1035@0.0.1920.1035" timestamp="1585723694290" />
     <state x="1105" y="236" key="run.anything.popup" timestamp="1585720122864">
       <screen x="0" y="0" width="1920" height="1035" />
     </state>

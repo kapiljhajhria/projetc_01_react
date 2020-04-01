@@ -1,0 +1,38 @@
+
+.movieCard{
+    position: relative;
+}
+.movie-poster{
+    position: relative;
+    display: flex;
+    /*flex-wrap: wrap;*/
+    width:25vh;
+    height: 35vh;
+    /*border: 2px solid black;*/
+    margin: 8px;
+}
+.movieimg{
+    width:25vh;
+    height: 35vh;
+}
+.movie-poster:hover + .mv-inf{
+    visibility: visible;
+}
+
+.mv-inf:hover{
+    visibility: visible;
+}
+
+.mv-inf{
+    position: absolute;
+    alignment: bottom;
+    bottom: 0;
+    /*top: -6px;*/
+    /*z-index: 3;*/
+    align-self: end;
+    width: 100%;
+    background-color: white;
+    height: 18vh;
+    /*margin: 8px;*/
+    visibility: hidden;
+}
