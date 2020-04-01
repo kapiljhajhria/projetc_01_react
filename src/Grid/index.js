@@ -3,25 +3,22 @@ import Square from "../Square";
 import './styles.css'
 
 class Grid extends React.Component {
+    getGridRow(offset){
+        return(
+            <div className="gridRow">
+                <Square indexNumber={offset+0}></Square>
+                <Square indexNumber={offset+1}></Square>
+                <Square indexNumber={offset+2}></Square>
+
+            </div>
+        );
+    }
     render() {
         return (
             <div className="grid">
-                <div className="row1">
-                    <Square></Square>
-                    <Square></Square>
-                    <Square></Square>
-                </div>
-                <div className="row2">
-                    <Square></Square>
-                    <Square></Square>
-                    <Square></Square>
-
-                </div>
-                <div className="row3">
-                    <Square></Square>
-                    <Square></Square>
-                    <Square></Square>
-                </div>
+                {this.getGridRow(1)}
+                {this.getGridRow(4)}
+                {this.getGridRow(7)}
             </div>
         );
     }
