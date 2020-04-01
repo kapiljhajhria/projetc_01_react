@@ -15,15 +15,24 @@ class MoviePoster extends React.Component {
                     </div>
                 </div>
                 <div className="mv-inf">
-                    <div className="mv-inf-title">
-                        {this.props.movieName}
+                    <div className="mv-inf-top">
+                        <div className="mv-inf-title">
+                            {this.props.movieName}
+                        </div>
                     </div>
-                    <div className="mv-inf-ratings">
-                        {this.props.contentRating}
-                    </div>
-                    <div className="mv-inf-genre">
-                        {this.props.genre}
-                    </div>
+                        <div>
+                            <hr/>
+                        </div>
+                   <div className="mv-inf-btm">
+                       <div className="mv-inf-genre">
+                           {this.props.genre}
+                       </div>
+                       <div className="mv-inf-ratings">
+                           {this.props.contentRating}
+                       </div>
+
+
+                   </div>
 
                 </div>
             </div>
