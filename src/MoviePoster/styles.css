@@ -1,3 +1,6 @@
+*{
+    box-sizing: border-box;
+}
 
 .movieCard{
     position: relative;
@@ -31,13 +34,13 @@
     position: absolute;
     alignment: bottom;
     bottom: 0;
-    padding-bottom: 5px;
-    padding-top: 5px;
+    padding:5px;
     /*top: -6px;*/
     /*z-index: 3;*/
     align-self: end;
     width: 100%;
     background-color: white;
+
     /*height: 8vh;*/
     /*margin: 8px;*/
     visibility: hidden;
@@ -54,22 +57,29 @@
 .mv-inf-top{
     text-align: left;
     font-weight: bolder;
+
 }
 
 .mv-inf-btm{
     display: flex;
     flex-direction: row;
     justify-content: space-between;
+
 }
 .mv-inf-genre{
-    color: #868c85;
-    font-weight: 400;
+    display: flex;
+    /*color: #868c85;*/
+    /*font-weight: 400;*/
+    flex-wrap: wrap;
+    text-align: left;
 }
 
 .mv-inf-ratings{
     border-radius: 8px;
     background-color: red;
-    padding-left:6px;
-    padding-right: 6px;
+    padding-left:8px;
+    padding-right: 8px;
     color: white;
+    height: 22px;
+    align-self: center;
 }
