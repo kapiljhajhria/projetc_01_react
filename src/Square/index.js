@@ -9,15 +9,17 @@ class Square extends React.Component {
             color: 'red'
         }
     }
-
+    handleClick(){
+        this.setState({
+            value: 'X',
+            color:'green'
+        })
+    }
 
     render() {
         return (
-            <button className="button-square" onClick={() =>
-                this.setState({
-                    value: 'X',
-                    color:'green'
-                })}
+            <button className="button-square" onClick={() =>this.handleClick()
+                }
                     style={{color:this.state.color}}
                     hover={() =>
                 this.setState({
