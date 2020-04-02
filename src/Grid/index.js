@@ -9,14 +9,23 @@ class Grid extends React.Component {
         this.state={
             //initial state of grid
             squares:Array(9).fill(null),
+            isXnext:true,
+            status:'Player X turn'
         }
     }
 
     handleClick(index){
         let squaresCopy = this.state.squares.slice();
-        squaresCopy[index]='X';
+        if(squaresCopy[index]!==null){
+            return;
+        }
+        squaresCopy[index]=this.state.isXnext?'X':'O';
         //update the state
-        this.setState({squares:squaresCopy})
+        this.setState({
+            squares:squaresCopy,
+            isXnext:!this.state.isXnext,
+            status:!this.state.isXnext?'Player X turn':'Plaer O turn',
+        })
     }
 
 
@@ -33,9 +42,10 @@ class Grid extends React.Component {
     render() {
         return (
             <div className="grid">
-                {this.getGridRow(1)}
-                {this.getGridRow(4)}
-                {this.getGridRow(7)}
+                {this.state.status}
+                {this.getGridRow(0)}
+                {this.getGridRow(3)}
+                {this.getGridRow(6)}
             </div>
         );
     }
