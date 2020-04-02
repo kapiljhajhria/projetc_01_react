@@ -3,12 +3,29 @@ import Square from "../Square";
 import './styles.css'
 
 class Grid extends React.Component {
+
+    constructor(props) {
+        super(props);
+        this.state={
+            //initial state of grid
+            squares:Array(9).fill(null),
+        }
+    }
+
+    handleClick(index){
+        let squaresCopy = this.state.squares.slice();
+        squaresCopy[index]='X';
+        //update the state
+        this.setState({squares:squaresCopy})
+    }
+
+
     getGridRow(offset){
         return(
             <div className="gridRow">
-                <Square indexNumber={offset+0}></Square>
-                <Square indexNumber={offset+1}></Square>
-                <Square indexNumber={offset+2}></Square>
+                <Square value={this.state.squares[offset+0]} squarePressed={()=>this.handleClick(offset+0)}></Square>
+                <Square value={this.state.squares[offset+1]} squarePressed={()=>this.handleClick(offset+1)}></Square>
+                <Square value={this.state.squares[offset+2]} squarePressed={()=>this.handleClick(offset+2)}></Square>
 
             </div>
         );
