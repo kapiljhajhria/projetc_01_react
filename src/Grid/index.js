@@ -11,28 +11,39 @@ class Grid extends React.Component {
             squares: Array(9).fill(null),
             isXnext: true,
             status: 'Player X turn',
-            gameOver:false,
-            isGameDraw:false,
+            gameOver: false,
+            isGameDraw: false,
         }
     }
 
 
-
     handleClick(index) {
-        if(this.state.gameOver){
-            alert("game over, refresh page to start over");
-        }
-        else{
+        if (this.state.gameOver) {
+            if(this.state.isGameDraw){
+                alert("No More Moves left, Please start over");
+            }else{
+                alert("game Won, refresh page to start over");
+            }
+
+        } else {
             let squaresCopy = this.state.squares.slice();
             if (squaresCopy[index] !== null) {
                 return;
             }
             squaresCopy[index] = this.state.isXnext ? 'X' : 'O';
+
             if (this.gameWon(squaresCopy)) {
                 this.setState({
                     squares: squaresCopy,
                     status: 'Game Won',
-                    gameOver:true
+                    gameOver: true
+                });
+            } else if (this.gameDraw(squaresCopy)) {
+                this.setState({
+                    squares: squaresCopy,
+                    status: 'Game Drawn',
+                    gameOver: true,
+                    isGameDraw: true
                 });
             } else {
                 this.setState({
@@ -45,9 +56,11 @@ class Grid extends React.Component {
         //update the state
 
     }
-    gameDraw(squaresList){
-        return this.squares.every((el)=>el!==null);
+
+    gameDraw(squaresList) {
+        return squaresList.every((el) => el !== null);
     }
+
     gameWon(squaresList) {
         if (squaresList[0] === 'X' && squaresList[1] === 'X' && squaresList[2] === 'X')
             return true;
