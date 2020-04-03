@@ -75,7 +75,7 @@
       <workItem from="1585818166303" duration="1426000" />
       <workItem from="1585823438076" duration="214000" />
       <workItem from="1585824432238" duration="58000" />
-      <workItem from="1585894001843" duration="3968000" />
+      <workItem from="1585894001843" duration="4845000" />
     </task>
     <task id="LOCAL-00001" summary="init">
       <created>1585718785316</created>
@@ -133,7 +133,21 @@
       <option name="project" value="LOCAL" />
       <updated>1585896672126</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="game draw and game won working">
+      <created>1585899995991</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1585899995991</updated>
+    </task>
+    <task id="LOCAL-00010" summary="format code">
+      <created>1585900031102</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1585900031102</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -148,13 +162,15 @@
     <MESSAGE value="sqaure is now stateless&#10;&#10;using grid to update square valeu now" />
     <MESSAGE value="able to play game now and also show status" />
     <MESSAGE value="game won working" />
-    <option name="LAST_COMMIT_MESSAGE" value="game won working" />
+    <MESSAGE value="game draw and game won working" />
+    <MESSAGE value="format code" />
+    <option name="LAST_COMMIT_MESSAGE" value="format code" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="1039" y="94" key="CommitChangelistDialog2" timestamp="1585900015527">
+    <state x="1039" y="94" key="CommitChangelistDialog2" timestamp="1585900031047">
       <screen x="0" y="0" width="1920" height="1035" />
     </state>
-    <state x="1039" y="94" key="CommitChangelistDialog2/0.0.1920.1035@0.0.1920.1035" timestamp="1585900015527" />
+    <state x="1039" y="94" key="CommitChangelistDialog2/0.0.1920.1035@0.0.1920.1035" timestamp="1585900031047" />
     <state x="1331" y="414" key="Github.ShareDialog" timestamp="1585813333370">
       <screen x="0" y="0" width="1920" height="1035" />
     </state>
@@ -211,10 +227,10 @@
       <screen x="0" y="0" width="1920" height="1035" />
     </state>
     <state x="923" y="152" key="SettingsEditor/0.0.1920.1035@0.0.1920.1035" timestamp="1585806289380" />
-    <state x="1077" y="253" key="Vcs.Push.Dialog.v2" timestamp="1585899997382">
+    <state x="1077" y="253" key="Vcs.Push.Dialog.v2" timestamp="1585900034384">
       <screen x="0" y="0" width="1920" height="1035" />
     </state>
-    <state x="1077" y="253" key="Vcs.Push.Dialog.v2/0.0.1920.1035@0.0.1920.1035" timestamp="1585899997382" />
+    <state x="1077" y="253" key="Vcs.Push.Dialog.v2/0.0.1920.1035@0.0.1920.1035" timestamp="1585900034384" />
     <state x="1105" y="236" key="run.anything.popup" timestamp="1585720122864">
       <screen x="0" y="0" width="1920" height="1035" />
     </state>

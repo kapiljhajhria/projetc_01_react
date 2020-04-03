@@ -35,7 +35,7 @@ class Grid extends React.Component {
             if (this.gameWon(squaresCopy)) {
                 this.setState({
                     squares: squaresCopy,
-                    status: 'Game Won',
+                    status: !this.state.isXnext ? 'Player O Won' : 'Plaer X Won',
                     gameOver: true
                 });
             } else if (this.gameDraw(squaresCopy)) {
