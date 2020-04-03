@@ -19,9 +19,9 @@ class Grid extends React.Component {
 
     handleClick(index) {
         if (this.state.gameOver) {
-            if(this.state.isGameDraw){
+            if (this.state.isGameDraw) {
                 alert("No More Moves left, Please start over");
-            }else{
+            } else {
                 alert("game Won, refresh page to start over");
             }
 
