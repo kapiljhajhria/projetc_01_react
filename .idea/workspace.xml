@@ -1,10 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="2aa69c4b-e382-447f-a0a7-379ffe071ec2" name="Default Changelist" comment="">
+    <list default="true" id="2aa69c4b-e382-447f-a0a7-379ffe071ec2" name="Default Changelist" comment="able to play game now and also show status">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Grid/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Grid/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Square/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Square/index.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -72,6 +71,11 @@
       <option name="presentableId" value="Default" />
       <updated>1585718414361</updated>
       <workItem from="1585718416203" duration="3416000" />
+      <workItem from="1585813322248" duration="30000" />
+      <workItem from="1585818166303" duration="1426000" />
+      <workItem from="1585823438076" duration="214000" />
+      <workItem from="1585824432238" duration="58000" />
+      <workItem from="1585894001843" duration="2528000" />
     </task>
     <task id="LOCAL-00001" summary="init">
       <created>1585718785316</created>
@@ -108,7 +112,21 @@
       <option name="project" value="LOCAL" />
       <updated>1585806638183</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="sqaure is now stateless&#10;&#10;using grid to update square valeu now">
+      <created>1585808298287</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1585808298288</updated>
+    </task>
+    <task id="LOCAL-00007" summary="able to play game now and also show status">
+      <created>1585809362540</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1585809362540</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -120,33 +138,75 @@
     <MESSAGE value="rough grid UI completed" />
     <MESSAGE value="day 110 task 1 completed&#10;&#10;change color from red to green &#10;chnage value from o to X on clicking button" />
     <MESSAGE value="use seperate function instead of inline function" />
-    <option name="LAST_COMMIT_MESSAGE" value="use seperate function instead of inline function" />
+    <MESSAGE value="sqaure is now stateless&#10;&#10;using grid to update square valeu now" />
+    <MESSAGE value="able to play game now and also show status" />
+    <option name="LAST_COMMIT_MESSAGE" value="able to play game now and also show status" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="1041" y="94" key="CommitChangelistDialog2" timestamp="1585806638126">
+    <state x="1039" y="94" key="CommitChangelistDialog2" timestamp="1585812806360">
       <screen x="0" y="0" width="1920" height="1035" />
     </state>
-    <state x="1041" y="94" key="CommitChangelistDialog2/0.0.1920.1035@0.0.1920.1035" timestamp="1585806638126" />
-    <state width="898" height="272" key="GridCell.Tab.0.bottom" timestamp="1585808087539">
+    <state x="1039" y="94" key="CommitChangelistDialog2/0.0.1920.1035@0.0.1920.1035" timestamp="1585812806360" />
+    <state x="1331" y="414" key="Github.ShareDialog" timestamp="1585813333370">
       <screen x="0" y="0" width="1920" height="1035" />
     </state>
-    <state width="898" height="272" key="GridCell.Tab.0.bottom/0.0.1920.1035@0.0.1920.1035" timestamp="1585808087539" />
-    <state width="898" height="272" key="GridCell.Tab.0.center" timestamp="1585808087539">
+    <state x="1331" y="414" key="Github.ShareDialog/0.0.1920.1035@0.0.1920.1035" timestamp="1585813333370" />
+    <state width="1331" height="335" key="GridCell.Tab.0.bottom" timestamp="1585896631868">
       <screen x="0" y="0" width="1920" height="1035" />
     </state>
-    <state width="898" height="272" key="GridCell.Tab.0.center/0.0.1920.1035@0.0.1920.1035" timestamp="1585808087539" />
-    <state width="898" height="272" key="GridCell.Tab.0.left" timestamp="1585808087538">
+    <state width="1331" height="335" key="GridCell.Tab.0.bottom/0.0.1920.1035@0.0.1920.1035" timestamp="1585896631868" />
+    <state width="1331" height="335" key="GridCell.Tab.0.center" timestamp="1585896631868">
       <screen x="0" y="0" width="1920" height="1035" />
     </state>
-    <state width="898" height="272" key="GridCell.Tab.0.left/0.0.1920.1035@0.0.1920.1035" timestamp="1585808087538" />
-    <state width="898" height="272" key="GridCell.Tab.0.right" timestamp="1585808087539">
+    <state width="1331" height="335" key="GridCell.Tab.0.center/0.0.1920.1035@0.0.1920.1035" timestamp="1585896631868" />
+    <state width="1331" height="335" key="GridCell.Tab.0.left" timestamp="1585896631867">
       <screen x="0" y="0" width="1920" height="1035" />
     </state>
-    <state width="898" height="272" key="GridCell.Tab.0.right/0.0.1920.1035@0.0.1920.1035" timestamp="1585808087539" />
+    <state width="1331" height="335" key="GridCell.Tab.0.left/0.0.1920.1035@0.0.1920.1035" timestamp="1585896631867" />
+    <state width="1331" height="335" key="GridCell.Tab.0.right" timestamp="1585896631868">
+      <screen x="0" y="0" width="1920" height="1035" />
+    </state>
+    <state width="1331" height="335" key="GridCell.Tab.0.right/0.0.1920.1035@0.0.1920.1035" timestamp="1585896631868" />
+    <state width="1331" height="335" key="GridCell.Tab.1.bottom" timestamp="1585896631868">
+      <screen x="0" y="0" width="1920" height="1035" />
+    </state>
+    <state width="1331" height="335" key="GridCell.Tab.1.bottom/0.0.1920.1035@0.0.1920.1035" timestamp="1585896631868" />
+    <state width="1331" height="335" key="GridCell.Tab.1.center" timestamp="1585896631868">
+      <screen x="0" y="0" width="1920" height="1035" />
+    </state>
+    <state width="1331" height="335" key="GridCell.Tab.1.center/0.0.1920.1035@0.0.1920.1035" timestamp="1585896631868" />
+    <state width="1331" height="335" key="GridCell.Tab.1.left" timestamp="1585896631868">
+      <screen x="0" y="0" width="1920" height="1035" />
+    </state>
+    <state width="1331" height="335" key="GridCell.Tab.1.left/0.0.1920.1035@0.0.1920.1035" timestamp="1585896631868" />
+    <state width="1331" height="335" key="GridCell.Tab.1.right" timestamp="1585896631868">
+      <screen x="0" y="0" width="1920" height="1035" />
+    </state>
+    <state width="1331" height="335" key="GridCell.Tab.1.right/0.0.1920.1035@0.0.1920.1035" timestamp="1585896631868" />
+    <state width="1331" height="335" key="GridCell.Tab.2.bottom" timestamp="1585896631869">
+      <screen x="0" y="0" width="1920" height="1035" />
+    </state>
+    <state width="1331" height="335" key="GridCell.Tab.2.bottom/0.0.1920.1035@0.0.1920.1035" timestamp="1585896631869" />
+    <state width="1331" height="335" key="GridCell.Tab.2.center" timestamp="1585896631869">
+      <screen x="0" y="0" width="1920" height="1035" />
+    </state>
+    <state width="1331" height="335" key="GridCell.Tab.2.center/0.0.1920.1035@0.0.1920.1035" timestamp="1585896631869" />
+    <state width="1331" height="335" key="GridCell.Tab.2.left" timestamp="1585896631869">
+      <screen x="0" y="0" width="1920" height="1035" />
+    </state>
+    <state width="1331" height="335" key="GridCell.Tab.2.left/0.0.1920.1035@0.0.1920.1035" timestamp="1585896631869" />
+    <state width="1331" height="335" key="GridCell.Tab.2.right" timestamp="1585896631869">
+      <screen x="0" y="0" width="1920" height="1035" />
+    </state>
+    <state width="1331" height="335" key="GridCell.Tab.2.right/0.0.1920.1035@0.0.1920.1035" timestamp="1585896631869" />
     <state x="923" y="152" key="SettingsEditor" timestamp="1585806289380">
       <screen x="0" y="0" width="1920" height="1035" />
     </state>
     <state x="923" y="152" key="SettingsEditor/0.0.1920.1035@0.0.1920.1035" timestamp="1585806289380" />
+    <state x="1077" y="253" key="Vcs.Push.Dialog.v2" timestamp="1585813338520">
+      <screen x="0" y="0" width="1920" height="1035" />
+    </state>
+    <state x="1077" y="253" key="Vcs.Push.Dialog.v2/0.0.1920.1035@0.0.1920.1035" timestamp="1585813338520" />
     <state x="1105" y="236" key="run.anything.popup" timestamp="1585720122864">
       <screen x="0" y="0" width="1920" height="1035" />
     </state>
