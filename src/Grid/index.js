@@ -102,11 +102,11 @@ class Grid extends React.Component {
         return (
             <div className="gridRow">
                 <Square value={this.state.squares[offset + 0]}
-                        squarePressed={() => this.handleClick(offset + 0)}></Square>
+                        squarePressed={() => this.handleClick(offset + 0)}> </Square>
                 <Square value={this.state.squares[offset + 1]}
-                        squarePressed={() => this.handleClick(offset + 1)}></Square>
+                        squarePressed={() => this.handleClick(offset + 1)}> </Square>
                 <Square value={this.state.squares[offset + 2]}
-                        squarePressed={() => this.handleClick(offset + 2)}></Square>
+                        squarePressed={() => this.handleClick(offset + 2)}> </Square>
 
             </div>
         );
