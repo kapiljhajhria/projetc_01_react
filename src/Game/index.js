@@ -16,7 +16,7 @@ class Game extends React.Component {
             history:[<div>Game History</div>]
         }
     }
-    rewindGameArray(index){
+    onHistoryBtnPress(index){
         return (
             this.setState({
                 squares:this.state.gameArray[index],
@@ -48,7 +48,7 @@ class Game extends React.Component {
             squaresCopy[index] = this.state.isXnext ? 'X' : 'O';
             let tempGameArray = this.state.gameArray.slice();
             tempGameArray.push(squaresCopy);
-            this.onHistoryBtnPress(tempGameArray);
+            this.addHistoryBtn(tempGameArray);
             if (this.gameWon(squaresCopy)) {
 
                 this.setState({
@@ -149,7 +149,7 @@ class Game extends React.Component {
 
         );
     }
-    onHistoryBtnPress(gameArray) {
+    addHistoryBtn(gameArray) {
         let gameArrayCopy = [].concat(gameArray);
         let historyCopy=[].concat(this.state.history);
         let moves =gameArray.length;
@@ -166,7 +166,7 @@ class Game extends React.Component {
         historyCopy.push(
             <div className={"historybtn"}><div>
                 {moves}.
-                <button onClick={()=>{this.rewindGameArray(moves-1)}}>
+                <button onClick={()=>{this.onHistoryBtnPress(moves-1)}}>
                   Go back to move no {moves-1}
                 </button>
             </div></div>
