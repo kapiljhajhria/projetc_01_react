@@ -8,7 +8,7 @@ class Game extends React.Component {
         this.state = {
             //initial state of grid
             gameArray:[Array(9).fill(null)],
-            sqaures:[],
+            squares:[],
             isXnext: true,
             status: 'Player X turn',
             gameOver: false,
@@ -16,7 +16,15 @@ class Game extends React.Component {
             history:[<div>Game History</div>]
         }
     }
+    rewindGameArray(index){
+        return (
+            this.setState({
+                squares:this.state.gameArray[index],
 
+            })
+
+        );
+    }
     handleClick(index) {
         if (this.state.gameOver) {
             if (this.state.isGameDraw) {
@@ -107,7 +115,7 @@ class Game extends React.Component {
         return (
             this.setState({
                 gameArray:[Array(9).fill(null)],
-                sqaures:[],
+                squares:[],
                 isXnext: true,
                 status: 'Player X turn',
                 gameOver: false,
@@ -134,7 +142,7 @@ class Game extends React.Component {
         historyCopy.push(
             <div className={"historybtn"}><div>
                 {moves}.
-                <button>
+                <button onClick={()=>{this.rewindGameArray(moves-1)}}>
                   Go back to move no {moves-1}
                 </button>
             </div></div>
@@ -156,7 +164,7 @@ class Game extends React.Component {
                 <div className="left">
                     <div className={"gamestatus"}>{this.state.status}</div>
                     <div>
-                        <Grid squares={this.state.gameArray.slice(-1)[0]} handleClick={(index) =>this.handleClick(index)}/>
+                        <Grid squares={this.state.squares} handleClick={(index) =>this.handleClick(index)}/>
                     </div>
                 </div>
                 <div className={"right"}>
