@@ -7,7 +7,7 @@ class Game extends React.Component {
         super(props);
         this.state = {
             //initial state of grid
-            gameArray:[Array(9).fill(null),[null,null,null,null,null,null,null,null,'X',]],
+            gameArray:[Array(9).fill(null)],
             sqaures:[],
             isXnext: true,
             status: 'Player X turn',
@@ -27,31 +27,35 @@ class Game extends React.Component {
         } else {
             let squaresCopy = this.state.gameArray.slice(-1)[0].slice();
             console.log(squaresCopy);
+            console.log('index is :'+index);
             if (squaresCopy[index] !== null) {
                 return;
             }
             squaresCopy[index] = this.state.isXnext ? 'X' : 'O';
-
+            let tempGameArray = this.state.gameArray.slice();
+            tempGameArray.push(squaresCopy);
             if (this.gameWon(squaresCopy)) {
+
                 this.setState({
+                    gameArray: tempGameArray,
                     squares: squaresCopy,
                     status: !this.state.isXnext ? 'Player O Won' : 'Plaer X Won',
                     gameOver: true
                 });
             } else if (this.gameDraw(squaresCopy)) {
                 this.setState({
+                    gameArray: tempGameArray,
                     squares: squaresCopy,
                     status: 'Game Drawn',
                     gameOver: true,
                     isGameDraw: true
                 });
             } else {
-                this.state.gameArray.push(squaresCopy);
                 this.setState({
-
+                    gameArray: tempGameArray,
                     squares: squaresCopy,
                     isXnext: !this.state.isXnext,
-                    status: !this.state.isXnext ? 'Player X turn' : 'Plaer O turn',
+                    status: !this.state.isXnext ? 'Player X turn' : 'Player O turn',
                 })
             }
         }
@@ -101,7 +105,13 @@ class Game extends React.Component {
 
     render() {
         return (
-            <Grid squares={this.state.gameArray.slice(-1)[0]} handleClick={(index) =>this.handleClick(index)}/>
+            <div className="gameBoard">
+                <div className="left">
+                    <div>{this.state.status}</div>
+                    <Grid squares={this.state.gameArray.slice(-1)[0]} handleClick={(index) =>this.handleClick(index)}/>
+                </div>
+            </div>
+
         );
     }
 }
