@@ -54,7 +54,7 @@ class Game extends React.Component {
                 this.setState({
                     gameArray: tempGameArray,
                     squares: squaresCopy,
-                    status: !this.state.isXnext ? 'Player O Won' : 'Plaer X Won',
+                    status: !this.state.isXnext ? 'Player O Won' : 'Player X Won',
                     gameOver: true
                 });
             } else if (this.gameDraw(squaresCopy)) {
@@ -135,7 +135,7 @@ class Game extends React.Component {
     continueGameFromCurrentState(currentSquare){
         let moves=currentSquare.filter((x)=>x!=null).length;
         let newGameAray=this.state.gameArray.slice(0, moves+1);
-        let newStatus=moves%2===0?'Player X Move':'Player O move';
+        let newStatus=moves%2===0?'Player X turn':'Player O turn';
         let newHistory=this.state.history.slice(0,moves+2);
         return (
             this.setState({
