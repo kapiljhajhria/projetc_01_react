@@ -26,8 +26,6 @@ class Game extends React.Component {
 
         } else {
             let squaresCopy = this.state.gameArray.slice(-1)[0].slice();
-            console.log(squaresCopy);
-            console.log('index is :'+index);
             if (squaresCopy[index] !== null) {
                 return;
             }

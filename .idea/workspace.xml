@@ -4,7 +4,6 @@
     <list default="true" id="2aa69c4b-e382-447f-a0a7-379ffe071ec2" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Game/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Game/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Grid/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Grid/index.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -79,7 +78,7 @@
       <workItem from="1585823438076" duration="214000" />
       <workItem from="1585824432238" duration="58000" />
       <workItem from="1585894001843" duration="5492000" />
-      <workItem from="1586002801507" duration="1158000" />
+      <workItem from="1586002801507" duration="1280000" />
     </task>
     <task id="LOCAL-00001" summary="init">
       <created>1585718785316</created>
@@ -165,7 +164,14 @@
       <option name="project" value="LOCAL" />
       <updated>1585911078639</updated>
     </task>
-    <option name="localTasksCounter" value="13" />
+    <task id="LOCAL-00013" summary="able to play game with new component structure.">
+      <created>1586004019186</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1586004019186</updated>
+    </task>
+    <option name="localTasksCounter" value="14" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -197,13 +203,14 @@
     <MESSAGE value="format code" />
     <MESSAGE value="status displays who won the game" />
     <MESSAGE value="printing correct array in terminal" />
-    <option name="LAST_COMMIT_MESSAGE" value="printing correct array in terminal" />
+    <MESSAGE value="able to play game with new component structure." />
+    <option name="LAST_COMMIT_MESSAGE" value="able to play game with new component structure." />
   </component>
   <component name="WindowStateProjectService">
-    <state x="1039" y="94" key="CommitChangelistDialog2" timestamp="1585911078569">
+    <state x="1039" y="94" key="CommitChangelistDialog2" timestamp="1586004019100">
       <screen x="0" y="0" width="1920" height="1035" />
     </state>
-    <state x="1039" y="94" key="CommitChangelistDialog2/0.0.1920.1035@0.0.1920.1035" timestamp="1585911078569" />
+    <state x="1039" y="94" key="CommitChangelistDialog2/0.0.1920.1035@0.0.1920.1035" timestamp="1586004019100" />
     <state x="1331" y="414" key="Github.ShareDialog" timestamp="1585813333370">
       <screen x="0" y="0" width="1920" height="1035" />
     </state>
@@ -260,10 +267,10 @@
       <screen x="0" y="0" width="1920" height="1035" />
     </state>
     <state x="923" y="152" key="SettingsEditor/0.0.1920.1035@0.0.1920.1035" timestamp="1585806289380" />
-    <state x="1077" y="253" key="Vcs.Push.Dialog.v2" timestamp="1585911079817">
+    <state x="1077" y="253" key="Vcs.Push.Dialog.v2" timestamp="1586004025008">
       <screen x="0" y="0" width="1920" height="1035" />
     </state>
-    <state x="1077" y="253" key="Vcs.Push.Dialog.v2/0.0.1920.1035@0.0.1920.1035" timestamp="1585911079817" />
+    <state x="1077" y="253" key="Vcs.Push.Dialog.v2/0.0.1920.1035@0.0.1920.1035" timestamp="1586004025008" />
     <state x="1105" y="236" key="run.anything.popup" timestamp="1585720122864">
       <screen x="0" y="0" width="1920" height="1035" />
     </state>
