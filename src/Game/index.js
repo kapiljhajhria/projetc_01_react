@@ -34,10 +34,17 @@ class Game extends React.Component {
             }
 
         } else {
+            console.log(this.state.squares.filter((x)=>x!==null).length);
+            console.log(this.state.gameArray.length-1);
+            if(this.state.squares.filter((x)=>x!==null).length!==this.state.gameArray.length-1){
+                console.log('here here');
+                this.continueGameFromCurrentState(this.state.squares);
+            }
             let squaresCopy = this.state.gameArray.slice(-1)[0].slice();
             if (squaresCopy[index] !== null) {
                 return;
             }
+
             squaresCopy[index] = this.state.isXnext ? 'X' : 'O';
             let tempGameArray = this.state.gameArray.slice();
             tempGameArray.push(squaresCopy);
@@ -121,6 +128,23 @@ class Game extends React.Component {
                 gameOver: false,
                 isGameDraw: false,
                 history:[<div>Game History</div>]
+            })
+
+        );
+    }
+    continueGameFromCurrentState(currentSquare){
+        let moves=currentSquare.filter((x)=>x!=null).length;
+        let newGameAray=this.state.gameArray.slice(0, moves+1);
+        let newStatus=moves%2===0?'Player X Move':'Player O move';
+        let newHistory=this.state.history.slice(0,moves+2);
+        return (
+            this.setState({
+                gameArray:newGameAray,
+                isXnext: moves % 2 === 0,
+                status: newStatus,
+                history:newHistory,
+                gameOver: false,
+                isGameDraw: false,
             })
 
         );
