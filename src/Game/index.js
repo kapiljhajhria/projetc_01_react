@@ -8,7 +8,7 @@ class Game extends React.Component {
         this.state = {
             //initial state of grid
             gameArray:[Array(9).fill(null)],
-            squares:[],
+            squares:Array(9).fill(null),
             isXnext: true,
             status: 'Player X turn',
             gameOver: false,
@@ -17,9 +17,12 @@ class Game extends React.Component {
         }
     }
     onHistoryBtnPress(index){
+        // console.log('hey23');
+        let temp=this.state.gameArray[index];
+        // console.log('temp:'+temp);
         return (
             this.setState({
-                squares:this.state.gameArray[index],
+                squares:temp,
 
             })
 
@@ -34,21 +37,22 @@ class Game extends React.Component {
             }
 
         } else {
-            console.log(this.state.squares.filter((x)=>x!==null).length);
-            console.log(this.state.gameArray.length-1);
-            if(this.state.squares.filter((x)=>x!==null).length!==this.state.gameArray.length-1){
-                console.log('here here');
-                this.continueGameFromCurrentState(this.state.squares);
-            }
-            let squaresCopy = this.state.gameArray.slice(-1)[0].slice();
+            // console.log(this.state.squares.filter((x)=>x!==null).length);
+            // console.log(this.state.gameArray.length-1);
+
+            let squaresCopy = [].concat(this.state.squares);
             if (squaresCopy[index] !== null) {
                 return;
             }
-
+            if(this.state.squares.filter((x)=>x!==null).length!==this.state.gameArray.length-1){
+                // console.log('here here');
+                this.continueGameFromCurrentState(squaresCopy);
+            }
             squaresCopy[index] = this.state.isXnext ? 'X' : 'O';
             let tempGameArray = this.state.gameArray.slice();
             tempGameArray.push(squaresCopy);
             this.addHistoryBtn(tempGameArray);
+            // console.log('tempGameArray is :'+tempGameArray);
             if (this.gameWon(squaresCopy)) {
 
                 this.setState({
@@ -122,7 +126,7 @@ class Game extends React.Component {
         return (
             this.setState({
                 gameArray:[Array(9).fill(null)],
-                squares:[],
+                squares:Array(9).fill(null),
                 isXnext: true,
                 status: 'Player X turn',
                 gameOver: false,
@@ -136,7 +140,8 @@ class Game extends React.Component {
         let moves=currentSquare.filter((x)=>x!=null).length;
         let newGameAray=this.state.gameArray.slice(0, moves+1);
         let newStatus=moves%2===0?'Player X turn':'Player O turn';
-        let newHistory=this.state.history.slice(0,moves+2);
+        let newHistory=this.state.history.slice(0,moves);
+        console.log('newsHistor:'+newHistory.length);
         return (
             this.setState({
                 gameArray:newGameAray,
