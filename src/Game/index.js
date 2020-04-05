@@ -140,8 +140,7 @@ class Game extends React.Component {
         let moves=currentSquare.filter((x)=>x!=null).length;
         let newGameAray=this.state.gameArray.slice(0, moves+1);
         let newStatus=moves%2===0?'Player X turn':'Player O turn';
-        let newHistory=this.state.history.slice(0,moves);
-        console.log('newsHistor:'+newHistory.length);
+        let newHistory=this.state.history.slice(0,moves+2);
         return (
             this.setState({
                 gameArray:newGameAray,
