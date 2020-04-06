@@ -1,6 +1,6 @@
 import React from 'react';
 import './App.css';
-import MoviesGrid from "./MovieGrid";
+import MovieData from "./MovieData"
 import './moviedatabase'
 
 function App() {
@@ -8,7 +8,9 @@ function App() {
 
   return (
     <div className="App">
-   <MoviesGrid></MoviesGrid>
+   <MovieData>
+
+   </MovieData>
 
     </div>
   );

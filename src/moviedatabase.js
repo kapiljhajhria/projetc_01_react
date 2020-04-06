@@ -1,3 +1,9 @@
+
+// http://image.tmdb.org/t/p/w185
+
+
+
+
 const moviesInfoList =[
     {
         "id": "1",
