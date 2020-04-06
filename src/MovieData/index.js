@@ -46,12 +46,24 @@ export default class MoviesData extends React.Component {
         return (
             <div className={"main"}>
                 {!this.state.isLoading?(
-                    <div>
-                        Loading.....
+                    <div className={"loadingScreen"}>
+                        <div className="lds-spinner">
+                            <div></div>
+                            <div></div>
+                            <div></div>
+                            <div></div>
+                            <div></div>
+                            <div></div>
+                            <div></div>
+                            <div></div>
+                            <div></div>
+                            <div></div>
+                            <div></div>
+                            <div></div>
+                        </div>
                     </div>
                 ):(<div>
                     {this.state.data['title']}
-                    <h1>Completed Loading</h1>
                     <MovieGrid allMoviesData={this.state.data}>
 
                     </MovieGrid>
