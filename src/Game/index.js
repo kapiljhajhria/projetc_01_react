@@ -32,6 +32,14 @@ class Game extends React.Component {
     }
 
     handleClick(index) {
+        let squaresCopy = [].concat(this.state.squares);
+        if (squaresCopy[index] !== null) {
+            return;
+        }
+        if (this.state.squares.filter((x) => x !== null).length !== this.state.gameArray.length - 1) {
+            this.continueGameFromCurrentState(squaresCopy);
+
+        }
         if (this.state.gameOver) {
             if (this.state.isGameDraw) {
                 alert("No More Moves left, Please start over");
@@ -47,21 +55,7 @@ class Game extends React.Component {
                 return;
             }
             if (this.state.squares.filter((x) => x !== null).length !== this.state.gameArray.length - 1) {
-                // console.log('here here');
-                let moves = squaresCopy.filter((x) => x != null).length;
-                let newGameAray = this.state.gameArray.slice(0, moves + 1);
-                let newStatus = moves % 2 === 0 ? 'Player X turn' : 'Player O turn';
-                let newHistory = this.state.history.slice(0, moves + 2);
-
-                this.setState({
-                    gameArray: newGameAray,
-                    isXnext: moves % 2 === 0,
-                    status: newStatus,
-                    history: newHistory,
-                    gameOver: false,
-                    isGameDraw: false,
-                });
-
+                this.continueGameFromCurrentState(squaresCopy);
 
             }
             squaresCopy[index] = this.state.isXnext ? 'X' : 'O';
@@ -155,22 +149,19 @@ class Game extends React.Component {
         );
     }
 
-    continueGameFromCurrentState(currentSquare) {
-        let moves = currentSquare.filter((x) => x != null).length;
-        let newGameAray = this.state.gameArray.slice(0, moves + 1);
+    continueGameFromCurrentState(squaresCopy) {
+        let moves = squaresCopy.filter((x) => x != null).length;
+        let newGameArray = this.state.gameArray.slice(0, moves + 1);
         let newStatus = moves % 2 === 0 ? 'Player X turn' : 'Player O turn';
         let newHistory = this.state.history.slice(0, moves + 2);
-        return (
-            this.setState({
-                gameArray: newGameAray,
-                isXnext: moves % 2 === 0,
-                status: newStatus,
-                history: newHistory,
-                gameOver: false,
-                isGameDraw: false,
-            })
 
-        );
+
+        this.state.gameArray=newGameArray;
+        this.state.isXnext= moves % 2 === 0;
+        this.state.status= newStatus;
+        this.state.history= newHistory;
+        this.state.gameOver= false;
+        this.state.isGameDraw= false;
     }
 
     addHistoryBtn(gameArray) {
