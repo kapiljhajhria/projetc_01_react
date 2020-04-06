@@ -1,33 +1,36 @@
 import React from 'react'
 import './styles.css'
 import Grid from "../Grid";
+
 class Game extends React.Component {
 
     constructor(props) {
         super(props);
         this.state = {
             //initial state of grid
-            gameArray:[Array(9).fill(null)],
-            squares:Array(9).fill(null),
+            gameArray: [Array(9).fill(null)],
+            squares: Array(9).fill(null),
             isXnext: true,
             status: 'Player X turn',
             gameOver: false,
             isGameDraw: false,
-            history:[<div>Game History</div>]
+            history: [<div>Game History</div>]
         }
     }
-    onHistoryBtnPress(index){
+
+    onHistoryBtnPress(index) {
         // console.log('hey23');
-        let temp=this.state.gameArray[index];
+        let temp = this.state.gameArray[index];
         // console.log('temp:'+temp);
         return (
             this.setState({
-                squares:temp,
+                squares: temp,
 
             })
 
         );
     }
+
     handleClick(index) {
         if (this.state.gameOver) {
             if (this.state.isGameDraw) {
@@ -39,14 +42,27 @@ class Game extends React.Component {
         } else {
             // console.log(this.state.squares.filter((x)=>x!==null).length);
             // console.log(this.state.gameArray.length-1);
-
             let squaresCopy = [].concat(this.state.squares);
             if (squaresCopy[index] !== null) {
                 return;
             }
-            if(this.state.squares.filter((x)=>x!==null).length!==this.state.gameArray.length-1){
+            if (this.state.squares.filter((x) => x !== null).length !== this.state.gameArray.length - 1) {
                 // console.log('here here');
-                this.continueGameFromCurrentState(squaresCopy);
+                let moves = squaresCopy.filter((x) => x != null).length;
+                let newGameAray = this.state.gameArray.slice(0, moves + 1);
+                let newStatus = moves % 2 === 0 ? 'Player X turn' : 'Player O turn';
+                let newHistory = this.state.history.slice(0, moves + 2);
+
+                this.setState({
+                    gameArray: newGameAray,
+                    isXnext: moves % 2 === 0,
+                    status: newStatus,
+                    history: newHistory,
+                    gameOver: false,
+                    isGameDraw: false,
+                });
+
+
             }
             squaresCopy[index] = this.state.isXnext ? 'X' : 'O';
             let tempGameArray = this.state.gameArray.slice();
@@ -68,6 +84,7 @@ class Game extends React.Component {
                     status: 'Game Drawn',
                     gameOver: true,
                     isGameDraw: true
+
                 });
             } else {
                 this.setState({
@@ -75,6 +92,7 @@ class Game extends React.Component {
                     squares: squaresCopy,
                     isXnext: !this.state.isXnext,
                     status: !this.state.isXnext ? 'Player X turn' : 'Player O turn',
+
                 })
             }
         }
@@ -122,59 +140,68 @@ class Game extends React.Component {
         return false;
     }
 
-    gameReset(){
+    gameReset() {
         return (
             this.setState({
-                gameArray:[Array(9).fill(null)],
-                squares:Array(9).fill(null),
+                gameArray: [Array(9).fill(null)],
+                squares: Array(9).fill(null),
                 isXnext: true,
                 status: 'Player X turn',
                 gameOver: false,
                 isGameDraw: false,
-                history:[<div>Game History</div>]
+                history: [<div>Game History</div>]
             })
 
         );
     }
-    continueGameFromCurrentState(currentSquare){
-        let moves=currentSquare.filter((x)=>x!=null).length;
-        let newGameAray=this.state.gameArray.slice(0, moves+1);
-        let newStatus=moves%2===0?'Player X turn':'Player O turn';
-        let newHistory=this.state.history.slice(0,moves+2);
+
+    continueGameFromCurrentState(currentSquare) {
+        let moves = currentSquare.filter((x) => x != null).length;
+        let newGameAray = this.state.gameArray.slice(0, moves + 1);
+        let newStatus = moves % 2 === 0 ? 'Player X turn' : 'Player O turn';
+        let newHistory = this.state.history.slice(0, moves + 2);
         return (
             this.setState({
-                gameArray:newGameAray,
+                gameArray: newGameAray,
                 isXnext: moves % 2 === 0,
                 status: newStatus,
-                history:newHistory,
+                history: newHistory,
                 gameOver: false,
                 isGameDraw: false,
             })
 
         );
     }
+
     addHistoryBtn(gameArray) {
         let gameArrayCopy = [].concat(gameArray);
-        let historyCopy=[].concat(this.state.history);
-        let moves =gameArray.length;
-        if(moves===2){
+        let historyCopy = [].concat(this.state.history);
+        let moves = gameArray.length;
+        if (moves === 2) {
             historyCopy.push(
-                <div className={"historybtn"}><div>
-                    {moves-1}.
-                    <button onClick={()=>{this.gameReset()}}>
-                        Restart Game
-                    </button>
-                </div></div>
+                <div className={"historybtn"}>
+                    <div>
+                        {moves - 1}.
+                        <button onClick={() => {
+                            this.gameReset()
+                        }}>
+                            Restart Game
+                        </button>
+                    </div>
+                </div>
             );
         }
         historyCopy.push(
-            <div className={"historybtn"}><div>
-                {moves}.
-                <button onClick={()=>{this.onHistoryBtnPress(moves-1)}}>
-                  Go back to move no {moves-1}
-                </button>
-            </div></div>
-
+            <div className={"historybtn"}>
+                <div>
+                    {moves}.
+                    <button onClick={() => {
+                        this.onHistoryBtnPress(moves - 1)
+                    }}>
+                        Go back to move no {moves - 1}
+                    </button>
+                </div>
+            </div>
         );
 
         return (
@@ -186,13 +213,14 @@ class Game extends React.Component {
 
 
     }
+
     render() {
         return (
             <div className="gameboard">
                 <div className="left">
                     <div className={"gamestatus"}>{this.state.status}</div>
                     <div>
-                        <Grid squares={this.state.squares} handleClick={(index) =>this.handleClick(index)}/>
+                        <Grid squares={this.state.squares} handleClick={(index) => this.handleClick(index)}/>
                     </div>
                 </div>
                 <div className={"right"}>
