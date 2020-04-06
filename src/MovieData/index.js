@@ -38,10 +38,11 @@ export default class MoviesData extends React.Component {
         this.setState({data:tempList,isLoading:true});
         // return data;
     }
-
+    componentDidMount(){
+        this.getMovieData();
+    }
 
     render() {
-    this.getMovieData();
         return (
             <div className={"main"}>
                 {!this.state.isLoading?(
