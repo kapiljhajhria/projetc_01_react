@@ -238,7 +238,7 @@ function GameF() {
         setSquares(temp);
     }
 
-    const handleClick = (index) => {
+    const handleClick = async (index) => {
         let squaresCopy = [].concat(squares);
         if (squaresCopy[index] !== null) {
             return;
@@ -246,7 +246,7 @@ function GameF() {
         console.log(`current sqcpy is ${squaresCopy} ga length ${gameArray.length}`)
         if (squaresCopy.filter((x) => x !== null).length < gameArray.length - 1) {
             console.log("will try to continue game from history");
-            continueGameFromCurrentState(squaresCopy);
+            setGameArray(await continueGameFromCurrentState(squaresCopy));
 
         }
         squaresCopy = [].concat(squares);
@@ -262,10 +262,10 @@ function GameF() {
             if (squaresCopy[index] !== null) {
                 return;
             }
-            if (squares.filter((x) => x !== null).length !== gameArray.length - 1) {
-                continueGameFromCurrentState(squaresCopy);
-
-            }
+            // if (squares.filter((x) => x !== null).length < gameArray.length - 1) {
+            //     await continueGameFromCurrentState(squaresCopy);
+            //
+            // }
             squaresCopy[index] = isXnext ? 'X' : 'O';
             let tempGameArray = gameArray.slice();
             tempGameArray.push(squaresCopy);
@@ -362,6 +362,7 @@ function GameF() {
         setGameOver(false);
         setIsGameDraw(false);
         setRightDivList(newHistory);
+        return newGameArray;
     }
     const addHistoryBtn=(tempGameArray)=> {
         let gameArrayCopy = [].concat(tempGameArray);
@@ -421,4 +422,4 @@ function GameF() {
 
 }
 
-export default GameF;
+export default Game;
