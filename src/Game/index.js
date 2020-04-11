@@ -7,7 +7,6 @@ class Game extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            //initial state of grid
             gameArray: [Array(9).fill(null)],
             squares: Array(9).fill(null),
             isXnext: true,
@@ -230,13 +229,12 @@ function GameF() {
     const [status,setStatus] = useState('Player X turn');
     const [gameOver,setGameOver] = useState(false);
     const [isGameDraw,setIsGameDraw]  = useState(false);
-    const [history,setHistory] = useState([<div>Game History</div>]);
+    const [rightSideDivList,setRightDivList] = useState([<div>Game History</div>]);
 
-    const onHistoryBtnPress=(index)=>{
-        console.log(gameArray.length);
-        console.log(gameArray);
-        let temp = gameArray[index];
-        console.log('temp is :'+temp);
+    const onHistoryBtnPress=(index,tempGameArray)=>{
+        console.log(`4. in, onHistorypress, moves:${index} gameArrayLength: ${gameArray.length}`);
+        let temp = [].concat(tempGameArray)[index];
+        // console.log('temp is :'+temp);
         setSquares(temp);
     }
 
@@ -245,10 +243,13 @@ function GameF() {
         if (squaresCopy[index] !== null) {
             return;
         }
-        if (squares.filter((x) => x !== null).length !== gameArray.length - 1) {
+        console.log(`current sqcpy is ${squaresCopy} ga length ${gameArray.length}`)
+        if (squaresCopy.filter((x) => x !== null).length < gameArray.length - 1) {
+            console.log("will try to continue game from history");
             continueGameFromCurrentState(squaresCopy);
 
         }
+        squaresCopy = [].concat(squares);
         if (gameOver) {
             if (isGameDraw) {
                 alert("No More Moves left, Please start over");
@@ -268,8 +269,8 @@ function GameF() {
             squaresCopy[index] = isXnext ? 'X' : 'O';
             let tempGameArray = gameArray.slice();
             tempGameArray.push(squaresCopy);
-            console.log('this tempArray will be pushed to addHistoryBtn andits length is '+tempGameArray.length);
-            addHistoryBtn(tempGameArray);
+            // console.log('this tempArray will be pushed to addHistoryBtn andits length is '+tempGameArray.length);
+
             // console.log('tempGameArray is :'+tempGameArray);
             if (gameWon(squaresCopy)) {
                 setGameArray(tempGameArray);
@@ -282,6 +283,7 @@ function GameF() {
                 setStatus('Game Drawn');
                 setGameOver(true);
                 setIsGameDraw(true);
+
             } else {
                 setGameArray(tempGameArray);
                 setSquares(squaresCopy);
@@ -289,6 +291,10 @@ function GameF() {
                 setStatus(!isXnext ? 'Player O Won' : 'Player X Won');
 
             }
+            console.log('1. all values updated, adding rightSideDivList Button Now');
+            console.log(`1. gameArray : ${tempGameArray}`);
+            // console.log('adding rightSideDivList button'+`rightSideDivList length:${rightSideDivList}`)
+            addHistoryBtn(tempGameArray);
         }
         //update the state
 
@@ -341,36 +347,31 @@ function GameF() {
         setStatus('Player X turn');
         setGameOver(false);
         setIsGameDraw(false);
-        setHistory([<div>Game History</div>]);
+        setRightDivList([<div>Game History</div>]);
     }
 
     const continueGameFromCurrentState=(squaresCopy) =>{
         let moves = squaresCopy.filter((x) => x != null).length;
         let newGameArray = gameArray.slice(0, moves + 1);
         let newStatus = moves % 2 === 0 ? 'Player X turn' : 'Player O turn';
-        let newHistory = history.slice(0, moves + 2);
-
+        let newHistory = rightSideDivList.slice(0, moves + 2);
+        console.log(`6. inContnue, squares count ${squaresCopy.filter((x) => x != null).length} rDL le:${newHistory.length}`)
         setGameArray(newGameArray);
         setIsNext(moves % 2 === 0)
         setStatus(newStatus);
         setGameOver(false);
         setIsGameDraw(false);
-        setHistory(newHistory);
-        // gameArray = newGameArray;
-        // isXnext = moves % 2 === 0;
-        // status = newStatus;
-        // history = newHistory;
-        // gameOver = false;
-        // isGameDraw = false;
+        setRightDivList(newHistory);
     }
-    const addHistoryBtn=(gameArray)=> {
-        let gameArrayCopy = [].concat(gameArray);
-        console.log('history length so far is :'+history.length);
-        let historyCopy = [].concat(history);
-        let moves = gameArray.length-1;
-        console.log('moves are:'+moves);
-        if (moves === 1) {
-            historyCopy.push(
+    const addHistoryBtn=(tempGameArray)=> {
+        let gameArrayCopy = [].concat(tempGameArray);
+
+        let rDivListCopy = [].concat(rightSideDivList);
+        let moves = gameArrayCopy.length;
+        console.log(`2. addHistoryBtn ,all states variables are already updated rDivList${rDivListCopy.length} moves:${moves} tempgameArray:${tempGameArray.length} last gameArray value: ${tempGameArray}` );
+        // console.log('moves are:'+moves);
+        if (moves === 2) {
+            rDivListCopy.push(
                 <div className={"historybtn"}>
                     <div>
                         {moves - 1}.
@@ -383,19 +384,22 @@ function GameF() {
                 </div>
             );
         }
-        historyCopy.push(
+        {console.log('3. b4 onHistorybtn press  ');}
+        rDivListCopy.push(
             <div className={"historybtn"}>
                 <div>
                     {moves}.
                     <button onClick={() => {
-                        onHistoryBtnPress(moves )
+
+                        onHistoryBtnPress(moves-1,tempGameArray)
                     }}>
-                        Go back to move no {moves}
+                        Go back to move no {moves-1}
                     </button>
                 </div>
             </div>
         );
-        setHistory(historyCopy);
+        // console.log('rDivListCopy length so far is :'+rDivListCopy.length);
+        setRightDivList(rDivListCopy);
     }
 
 
@@ -409,7 +413,7 @@ function GameF() {
                 </div>
             </div>
             <div className={"right"}>
-                {history}
+                {rightSideDivList}
             </div>
         </div>
 
@@ -417,4 +421,4 @@ function GameF() {
 
 }
 
-export default Game;
+export default GameF;
