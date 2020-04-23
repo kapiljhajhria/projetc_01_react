@@ -13,7 +13,6 @@ class Game extends React.Component {
             status: 'Player X turn',
             gameOver: false,
             isGameDraw: false,
-            history: [<div>Game History</div>]
         }
     }
 
