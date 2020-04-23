@@ -19,9 +19,9 @@ class Game extends React.Component {
 
     onHistoryBtnPress(index) {
         let tempBoard = this.state.gameArray[index];
-        let numberOfXMoves=tempBoard.filter((el)=>el==="X").length;
-        let numberOfOMoves=tempBoard.filter((el)=>el==="O").length;
-        let tempStatus=numberOfOMoves===numberOfXMoves?'Player X turn':'Player O turn';
+        let numberOfXMoves = tempBoard.filter((el) => el === "X").length;
+        let numberOfOMoves = tempBoard.filter((el) => el === "O").length;
+        let tempStatus = numberOfOMoves === numberOfXMoves ? 'Player X turn' : 'Player O turn';
         return (
             this.setState({
                 squares: tempBoard,
@@ -151,13 +151,14 @@ class Game extends React.Component {
         let newGameArray = this.state.gameArray.slice(0, moves + 1);
         let newStatus = moves % 2 === 0 ? 'Player X turn' : 'Player O turn';
 
+        this.setState({
+            gameArray: newGameArray,
+            isXnext: moves % 2 === 0,
+            status: newStatus,
 
-        this.state.gameArray = newGameArray;
-        this.state.isXnext = moves % 2 === 0;
-        this.state.status = newStatus;
-
-        this.state.gameOver = false;
-        this.state.isGameDraw = false;
+            gameOver: false,
+            isGameDraw: false,
+        })
     }
 
     render() {
