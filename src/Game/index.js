@@ -18,15 +18,15 @@ class Game extends React.Component {
     }
 
     onHistoryBtnPress(index) {
-        // console.log('hey23');
-        let temp = this.state.gameArray[index];
-        // console.log('temp:'+temp);
+        let tempBoard = this.state.gameArray[index];
+        let numberOfXMoves=tempBoard.filter((el)=>el==="X").length;
+        let numberOfOMoves=tempBoard.filter((el)=>el==="O").length;
+        let tempStatus=numberOfOMoves===numberOfXMoves?'Player X turn':'Player O turn';
         return (
             this.setState({
-                squares: temp,
-
+                squares: tempBoard,
+                status: tempStatus,
             })
-
         );
     }
 
@@ -60,7 +60,6 @@ class Game extends React.Component {
             squaresCopy[index] = this.state.isXnext ? 'X' : 'O';
             let tempGameArray = this.state.gameArray.slice();
             tempGameArray.push(squaresCopy);
-            this.addHistoryBtn(tempGameArray);
             // console.log('tempGameArray is :'+tempGameArray);
             if (this.gameWon(squaresCopy)) {
 
@@ -142,7 +141,6 @@ class Game extends React.Component {
                 status: 'Player X turn',
                 gameOver: false,
                 isGameDraw: false,
-                history: [<div>Game History</div>]
             })
 
         );
@@ -152,56 +150,14 @@ class Game extends React.Component {
         let moves = squaresCopy.filter((x) => x != null).length;
         let newGameArray = this.state.gameArray.slice(0, moves + 1);
         let newStatus = moves % 2 === 0 ? 'Player X turn' : 'Player O turn';
-        let newHistory = this.state.history.slice(0, moves + 2);
 
 
         this.state.gameArray = newGameArray;
         this.state.isXnext = moves % 2 === 0;
         this.state.status = newStatus;
-        this.state.history = newHistory;
+
         this.state.gameOver = false;
         this.state.isGameDraw = false;
-    }
-
-    addHistoryBtn(gameArray) {
-        let gameArrayCopy = [].concat(gameArray);
-        let historyCopy = [].concat(this.state.history);
-        let moves = gameArray.length;
-        if (moves === 2) {
-            historyCopy.push(
-                <div className={"historybtn"}>
-                    <div>
-                        {moves - 1}.
-                        <button onClick={() => {
-                            this.gameReset()
-                        }}>
-                            Restart Game
-                        </button>
-                    </div>
-                </div>
-            );
-        }
-        historyCopy.push(
-            <div className={"historybtn"}>
-                <div>
-                    {moves}.
-                    <button onClick={() => {
-                        this.onHistoryBtnPress(moves - 1)
-                    }}>
-                        Go back to move no {moves - 1}
-                    </button>
-                </div>
-            </div>
-        );
-
-        return (
-            this.setState({
-                history: historyCopy,
-            })
-
-        );
-
-
     }
 
     render() {
@@ -214,7 +170,31 @@ class Game extends React.Component {
                     </div>
                 </div>
                 <div className={"right"}>
-                    {this.state.history}
+                    {
+                        this.state.gameArray.map((board, idx) =>
+                            (idx !== 0) ?
+                                (
+                                    <div className={"historybtn"}>
+                                        <div>
+                                            {/*{idx}.*/}
+                                            <button onClick={() => {
+                                                this.onHistoryBtnPress(idx)
+                                            }}>
+                                                Go back to move no {idx}
+                                            </button>
+                                        </div>
+                                    </div>
+                                ) : (<div className={"historybtn"}>
+                                    <div>
+                                        {/*{moves - 1}.*/}
+                                        <button onClick={() => {
+                                            this.gameReset()
+                                        }}>
+                                            Restart Game
+                                        </button>
+                                    </div>
+                                </div>)
+                        )}
                 </div>
             </div>
 
