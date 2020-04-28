@@ -1,4 +1,7 @@
-
+.App{
+    padding-bottom: 25px;
+    background-color: #ded3d3;
+}
 .grid{
     margin-top: 100px;
     display: flex;

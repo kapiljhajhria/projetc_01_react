@@ -19,7 +19,7 @@ class Game extends React.Component {
         let numberOfXMoves = tempBoard.filter((el) => el === "X").length;
         let numberOfOMoves = tempBoard.filter((el) => el === "O").length;
         let tempStatus = numberOfOMoves === numberOfXMoves ? 'Player X turn' : 'Player O turn';
-        let isXnextCopy=numberOfOMoves === numberOfXMoves;
+        let isXnextCopy = numberOfOMoves === numberOfXMoves;
         return (
             this.setState({
                 squares: tempBoard,
@@ -35,7 +35,7 @@ class Game extends React.Component {
             return;
         }
         if (this.state.squares.filter((x) => x !== null).length !== this.state.gameArray.length - 1) {
-           await this.continueGameFromCurrentState(squaresCopy);
+            await this.continueGameFromCurrentState(squaresCopy);
 
         }
         if (this.gameWon(squaresCopy) || this.gameDraw(squaresCopy)) {
@@ -152,6 +152,36 @@ class Game extends React.Component {
         })
     }
 
+    getHistoryCol() {
+        if (this.state.gameArray.length > 1) {
+            return this.state.gameArray.map((board, idx) =>
+                (idx !== 0) ?
+                    (
+                        <div className={"historybtn"}>
+                            <div>
+                                {/*{idx}.*/}
+                                <button onClick={() => {
+                                    this.onHistoryBtnPress(idx)
+                                }}>
+                                    Go back to move no {idx}
+                                </button>
+                            </div>
+                        </div>
+                    ) : (<div className={"historybtn"}>
+                        <div>
+                            {/*{moves - 1}.*/}
+                            <button onClick={() => {
+                                this.gameReset()
+                            }}>
+                                Restart Game
+                            </button>
+                        </div>
+                    </div>)
+            )
+        } else
+            return ""
+    }
+
     render() {
         return (
             <div className="gameboard">
@@ -162,31 +192,8 @@ class Game extends React.Component {
                     </div>
                 </div>
                 <div className={"right"}>
-                    {
-                        this.state.gameArray.map((board, idx) =>
-                            (idx !== 0) ?
-                                (
-                                    <div className={"historybtn"}>
-                                        <div>
-                                            {/*{idx}.*/}
-                                            <button onClick={() => {
-                                                this.onHistoryBtnPress(idx)
-                                            }}>
-                                                Go back to move no {idx}
-                                            </button>
-                                        </div>
-                                    </div>
-                                ) : (<div className={"historybtn"}>
-                                    <div>
-                                        {/*{moves - 1}.*/}
-                                        <button onClick={() => {
-                                            this.gameReset()
-                                        }}>
-                                            Restart Game
-                                        </button>
-                                    </div>
-                                </div>)
-                        )}
+                    {this.getHistoryCol()
+                    }
                 </div>
             </div>
 
