@@ -16,7 +16,7 @@ class Game extends React.Component {
         }
     }
 
-    onHistoryBtnPress(index) {
+    async onHistoryBtnPress(index) {
         let tempBoard = this.state.gameArray[index];
         let numberOfXMoves = tempBoard.filter((el) => el === "X").length;
         let numberOfOMoves = tempBoard.filter((el) => el === "O").length;
@@ -38,7 +38,7 @@ class Game extends React.Component {
             this.continueGameFromCurrentState(squaresCopy);
 
         }
-        if (this.state.gameOver) {
+        if (this.gameWon(squaresCopy) || this.gameDraw(squaresCopy)) {
             if (this.state.isGameDraw) {
                 alert("No More Moves left, Please start over");
             } else {
