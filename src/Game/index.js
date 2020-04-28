@@ -11,8 +11,6 @@ class Game extends React.Component {
             squares: Array(9).fill(null),
             isXnext: true,
             status: 'Player X turn',
-            gameOver: false,
-            isGameDraw: false,
         }
     }
 
@@ -21,25 +19,27 @@ class Game extends React.Component {
         let numberOfXMoves = tempBoard.filter((el) => el === "X").length;
         let numberOfOMoves = tempBoard.filter((el) => el === "O").length;
         let tempStatus = numberOfOMoves === numberOfXMoves ? 'Player X turn' : 'Player O turn';
+        let isXnextCopy=numberOfOMoves === numberOfXMoves;
         return (
             this.setState({
                 squares: tempBoard,
                 status: tempStatus,
+                isXnext: isXnextCopy
             })
         );
     }
 
-    handleClick(index) {
+    async handleClick(index) {
         let squaresCopy = [].concat(this.state.squares);
         if (squaresCopy[index] !== null) {
             return;
         }
         if (this.state.squares.filter((x) => x !== null).length !== this.state.gameArray.length - 1) {
-            this.continueGameFromCurrentState(squaresCopy);
+           await this.continueGameFromCurrentState(squaresCopy);
 
         }
         if (this.gameWon(squaresCopy) || this.gameDraw(squaresCopy)) {
-            if (this.state.isGameDraw) {
+            if (this.gameDraw(squaresCopy)) {
                 alert("No More Moves left, Please start over");
             } else {
                 alert("game Won, refresh page to start over");
@@ -53,7 +53,7 @@ class Game extends React.Component {
                 return;
             }
             if (this.state.squares.filter((x) => x !== null).length !== this.state.gameArray.length - 1) {
-                this.continueGameFromCurrentState(squaresCopy);
+                await this.continueGameFromCurrentState(squaresCopy);
 
             }
             squaresCopy[index] = this.state.isXnext ? 'X' : 'O';
@@ -66,15 +66,12 @@ class Game extends React.Component {
                     gameArray: tempGameArray,
                     squares: squaresCopy,
                     status: !this.state.isXnext ? 'Player O Won' : 'Player X Won',
-                    gameOver: true
                 });
             } else if (this.gameDraw(squaresCopy)) {
                 this.setState({
                     gameArray: tempGameArray,
                     squares: squaresCopy,
                     status: 'Game Drawn',
-                    gameOver: true,
-                    isGameDraw: true
 
                 });
             } else {
@@ -138,14 +135,12 @@ class Game extends React.Component {
                 squares: Array(9).fill(null),
                 isXnext: true,
                 status: 'Player X turn',
-                gameOver: false,
-                isGameDraw: false,
             })
 
         );
     }
 
-    continueGameFromCurrentState(squaresCopy) {
+    async continueGameFromCurrentState(squaresCopy) {
         let moves = squaresCopy.filter((x) => x != null).length;
         let newGameArray = this.state.gameArray.slice(0, moves + 1);
         let newStatus = moves % 2 === 0 ? 'Player X turn' : 'Player O turn';
@@ -154,9 +149,6 @@ class Game extends React.Component {
             gameArray: newGameArray,
             isXnext: moves % 2 === 0,
             status: newStatus,
-
-            gameOver: false,
-            isGameDraw: false,
         })
     }
 
