@@ -1,12 +1,7 @@
-.App{
-    padding-bottom: 25px;
-    background-color: #ded3d3;
-}
 .grid{
-    margin-top: 100px;
+    /*margin-top: 100px;*/
     display: flex;
     flex-direction: column;
-
 }
 .row1{
     /*width: 10px;*/
@@ -18,4 +13,14 @@
 .gridRow{
     display: flex;
     align-self: center;
+    border-bottom: solid 2px black;
+}
+.gridRow:last-child{
+    border-bottom: dashed 0 black;
+}
+.gridRow .button-square{
+    border-right: solid black 2px;
+}
+.gridRow .button-square:last-child{
+    border-right: 0;
 }

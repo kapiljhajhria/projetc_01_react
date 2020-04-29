@@ -157,25 +157,25 @@ class Game extends React.Component {
             return this.state.gameArray.map((board, idx) =>
                 (idx !== 0) ?
                     (
-                        <div className={"historybtn"}>
-                            <div>
-                                {/*{idx}.*/}
-                                <button onClick={() => {
-                                    this.onHistoryBtnPress(idx)
-                                }}>
-                                    Go back to move no {idx}
-                                </button>
-                            </div>
-                        </div>
-                    ) : (<div className={"historybtn"}>
-                        <div>
-                            {/*{moves - 1}.*/}
+                        <div className={"historyBtn"}>
+
+                            {/*{idx}.*/}
                             <button onClick={() => {
-                                this.gameReset()
+                                this.onHistoryBtnPress(idx)
                             }}>
-                                Restart Game
+                                Go back to move no {idx}
                             </button>
+
                         </div>
+                    ) : (<div className={"historyBtn"}>
+
+                        {/*{moves - 1}.*/}
+                        <button onClick={() => {
+                            this.gameReset()
+                        }}>
+                            Restart Game
+                        </button>
+
                     </div>)
             )
         } else
@@ -184,10 +184,10 @@ class Game extends React.Component {
 
     render() {
         return (
-            <div className="gameboard">
+            <div className="gameBoard">
                 <div className="left">
                     <div className={"gamestatus"}>{this.state.status}</div>
-                    <div>
+                    <div className="gameGridContainer">
                         <Grid squares={this.state.squares} handleClick={(index) => this.handleClick(index)}/>
                     </div>
                 </div>
